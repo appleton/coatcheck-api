@@ -13,7 +13,7 @@ if (NODE_ENV === 'production') {
   app.use(enforce.HTTPS(true));
 }
 
-// app.use(logger.requestLogger());
+app.use(logger.requestLogger());
 
 app.use(require('./lib/routes/index'));
 app.use(require('./lib/routes/search'));
