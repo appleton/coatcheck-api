@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "dev": "NODE_ENV=development nodemon index.js"
+    "dev": "NODE_ENV=development nodemon index.js",
+    "debug": "NODE_ENV=development  nodemon --debug index.js"
   },
   "engines": {
     "node": "5.7.1"
@@ -18,5 +19,8 @@
     "express-sslify": "^1.0.1",
     "logfmt": "^1.2.0",
     "twit": "^2.2.3"
+  },
+  "devDependencies": {
+    "node-inspector": "^0.12.7"
   }
 }
