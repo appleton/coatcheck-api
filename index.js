@@ -10,14 +10,14 @@ const app      = express();
 const logger   = require('./lib/helpers/logger');
 
 if (NODE_ENV === 'production') {
-  app.use(enforce.HTTPS(true));
+  app.use(enforce.HTTPS({ trustProtoHeader: true }));
 }
 
 app.use(logger.requestLogger());
 
 app.use(require('./lib/routes/index'));
 app.use(require('./lib/routes/search'));
-// app.use(require('./lib/middleware/error-handler'));
+app.use(require('./lib/middleware/error-handler'));
 
 const server = app.listen(process.env.PORT || 5000);
 
